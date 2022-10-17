@@ -48,7 +48,7 @@ int main()
 		{
 			for (int j = i + 1; j < input.size() + 1; j++)
 			{
-				if (input[j] < 48 || input[j] > 57) // A non-number is found and therefore the end of the number.
+				if ((input[j] < 48 || input[j] > 57) && input[j] != 46) // A non-number is found and therefore the end of the number.
 				{
 					original.push(input.substr(i, j - i));
 					i = j - 1;
@@ -145,7 +145,6 @@ int main()
 				break;
 			case '^':
 				result = pow(val2, val1);
-				break;
 			}
 			calStack.push(std::to_string(result));
 			rpn.pop();
